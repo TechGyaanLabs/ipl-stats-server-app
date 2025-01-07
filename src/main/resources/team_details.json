@@ -1,0 +1,82 @@
+[
+  {
+    "team": "Royal Challengers Bangalore",
+    "totalAmount": 120.00,
+    "remainingAmount": 0.75,
+    "teamLabel": "RCB",
+    "totalPlayer": 22,
+    "overseasPlayers": 8
+  },
+  {
+    "team": "Chennai Super Kings",
+    "totalAmount": 120.00,
+    "remainingAmount": 0.05,
+    "teamLabel": "CSK",
+    "totalPlayer": 25,
+    "overseasPlayers": 7
+  },
+  {
+    "team": "Delhi Capitals",
+    "totalAmount": 120.00,
+    "remainingAmount": 0.20,
+    "teamLabel": "DC",
+    "totalPlayer": 23,
+    "overseasPlayers": 7
+  },
+  {
+    "team": "Gujarat Titans",
+    "totalAmount": 120.00,
+    "remainingAmount": 0.15,
+    "teamLabel": "GT",
+    "totalPlayer": 25,
+    "overseasPlayers": 7
+  },
+  {
+    "team": "Sunrisers Hyderabad",
+    "totalAmount": 120.00,
+    "remainingAmount": 0.20,
+    "teamLabel": "SRH",
+    "totalPlayer": 20,
+    "overseasPlayers": 7
+  },
+  {
+    "team": "Kolkata Knight Riders",
+    "totalAmount": 120.00,
+    "remainingAmount": 0.05,
+    "teamLabel": "KKR",
+    "totalPlayer": 21,
+    "overseasPlayers": 8
+  },
+  {
+    "team": "Lucknow Super Giants",
+    "totalAmount": 120.00,
+    "remainingAmount": 0.10,
+    "teamLabel": "LSG",
+    "totalPlayer": 24,
+    "overseasPlayers": 6
+  },
+  {
+    "team": "Mumbai Indians",
+    "totalAmount": 120.00,
+    "remainingAmount": 0.20,
+    "teamLabel": "MI",
+    "totalPlayer": 23,
+    "overseasPlayers": 8
+  },
+  {
+    "team": "Punjab Kings",
+    "totalAmount": 120.00,
+    "remainingAmount": 0.35,
+    "teamLabel": "PBKS",
+    "totalPlayer": 25,
+    "overseasPlayers": 8
+  },
+  {
+    "team": "Rajasthan Royals",
+    "totalAmount": 120.00,
+    "remainingAmount": 0.30,
+    "teamLabel": "RR",
+    "totalPlayer": 20,
+    "overseasPlayers": 6
+  }
+]
