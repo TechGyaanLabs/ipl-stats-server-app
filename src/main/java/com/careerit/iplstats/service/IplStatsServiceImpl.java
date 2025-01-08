@@ -1,13 +1,12 @@
 package com.careerit.iplstats.service;
 
 import com.careerit.iplstats.domain.Player;
-import com.careerit.iplstats.dto.IplTeamStatsDto;
-import com.careerit.iplstats.dto.PlayerDto;
-import com.careerit.iplstats.dto.TeamStatsDto;
+import com.careerit.iplstats.dto.*;
 import com.careerit.iplstats.util.JsonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -62,19 +61,23 @@ public class IplStatsServiceImpl implements IplStatsService {
     }
 
     @Override
-    public IplTeamStatsDto getIplTeamStats() {
+    public List<IplTeamStatsDto> getIplTeamStats() {
         if(players.isEmpty()){
             throw new IllegalArgumentException("No players found");
         }
-        Map<String,Double> teamAmount = players.stream()
-                .collect(Collectors.groupingBy(Player::getTeam,Collectors.summingDouble(Player::getAmount)));
+        List<IplTeamStatsDto> iplTeamStatsDtos = new ArrayList<>();
 
-        Map<String,Integer> teamPlayerCount = players.stream()
-                .collect(Collectors.groupingBy(Player::getTeam,Collectors.summingInt(e -> 1)));
-
-        IplTeamStatsDto iplTeamStatsDto = new IplTeamStatsDto();
-        iplTeamStatsDto.setTeamAmount(teamAmount);
-        iplTeamStatsDto.setPlayerCount(teamPlayerCount);
-        return iplTeamStatsDto;
+        Map<String, List<Player>> teamPlayersMap = players.stream().collect(Collectors.groupingBy(Player::getTeam));
+        for(Map.Entry<String,List<Player>> entry : teamPlayersMap.entrySet()){
+            String teamName = entry.getKey();
+            List<Player> teamPlayers = entry.getValue();
+            int totalPlayers = teamPlayers.size();
+            double totalAmount = teamPlayers.stream().mapToDouble(Player::getAmount).sum();
+            TeamAmountDto teamAmountDto = new TeamAmountDto(teamName,totalAmount);
+            PlayerCountDto playerCountDto = new PlayerCountDto(teamName,totalPlayers);
+            IplTeamStatsDto iplTeamStatsDto = new IplTeamStatsDto(teamAmountDto,playerCountDto);
+            iplTeamStatsDtos.add(iplTeamStatsDto);
+        }
+        return iplTeamStatsDtos;
     }
 }

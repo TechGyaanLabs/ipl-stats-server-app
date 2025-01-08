@@ -9,6 +9,6 @@ public interface IplStatsService {
 
         List<String> getTeamNames();
         TeamStatsDto getTeamStats(String teamName);
-        IplTeamStatsDto getIplTeamStats();
+        List<IplTeamStatsDto> getIplTeamStats();
 
 }

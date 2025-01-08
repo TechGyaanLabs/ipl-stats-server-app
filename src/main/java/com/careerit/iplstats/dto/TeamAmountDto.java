@@ -4,12 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Map;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class IplTeamStatsDto {
-    private TeamAmountDto teamAmount;
-    private PlayerCountDto playerCount;
+public class TeamAmountDto {
+    private String teamName;
+    private double amount;
 }
