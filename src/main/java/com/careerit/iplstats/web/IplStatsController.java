@@ -29,7 +29,7 @@ public class IplStatsController {
     }
 
     @GetMapping("/teamstats")
-    public IplTeamStatsDto getIplTeamStats(){
+    public List<IplTeamStatsDto> getIplTeamStats(){
         return iplStatsService.getIplTeamStats();
     }
 
